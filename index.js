@@ -23,9 +23,9 @@ app.use('/notes',require('./routes/notes'));
 // app.get('/', (req, res) => {
 //   res.send('hello world')
 // });
-app.use(express.static(path.join(__dirname, './frontend/build')))
-app.use('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, './frontend/build/index.html'),
+app.use(express.static(path.join(__dirname, '/frontend/build')))
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/frontend/build/index.html'),
   // res.sendFile(path.join(__dirname, './frontend/build', 'index.html'),
   function(err){
     res.status(500).send(err)
