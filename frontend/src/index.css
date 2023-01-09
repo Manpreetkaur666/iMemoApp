@@ -38,14 +38,35 @@ i{
   background-color: var(--lightmode-yellow);
 }
 
-.about {
-	box-shadow: 5px 10px #888888;
+/********************************Navbar*********************************/
+.navbar-brand, .aboutHeading{
+	color: var(--darkmode-latte);
+	font-weight: bolder;
+	font-size: 25px;
 }
-.about-section{
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
+.navbar-brand span,
+.aboutHeading span {
+	font-size: 30px;
+	color: var(--lightmode-yellow);
 }
+
+/********************************About*********************************/
+.about-section p{
+	font-family: Roboto;
+	font-weight: 700;
+	margin: 50px;
+	font-size: large;
+}
+
+.img-container{
+	border: 2px solid var(--lightmode-yellow);
+}
+.MainScreenImg{
+	width: 80vw;
+	height: 80vh;
+	object-fit: fill;
+}
+
 /********************************Login*********************************/
 .login-container {
 	display: flex;
