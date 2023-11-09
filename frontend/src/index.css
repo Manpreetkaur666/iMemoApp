@@ -8,6 +8,7 @@
   --darkmode-latte: #ddbc95;
   --darkmode-coffee: #b38867;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,12 +18,20 @@
 
 body {
   margin: 0;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--lightmode-pink);
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+  /* background-color: #111111; */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+    url(images/backgroundImage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow-y: scroll;
+  /* overflow: hidden; */
 }
 
 code {
@@ -33,31 +42,44 @@ code {
 i {
   cursor: pointer;
 }
+
 .card {
+  color: black;
   background-color: var(--lightmode-yellow);
 }
 
 /********************************Navbar*********************************/
 .navbar-brand,
 .aboutHeading {
-  color: var(--lightmode-green);
-  text-shadow: 2px 2px brown;
+  color: var(--darkmode-coffee);
+  text-shadow: 2px 2px black;
   font-weight: bolder;
   font-size: 25px;
 }
+
+.navbar-brand:hover {
+  color: var(--darkmode-coffee);
+}
+
 .navbar-brand span,
 .aboutHeading span {
   font-size: 30px;
-  color: var(--lightmode-yellow);
-  text-shadow: 2px 2px brown;
+  color: var(--darkmode-latte);
+  text-shadow: 2px 2px black;
 }
 
-
-.nav-item {
- color: black;
-  text-shadow: 1px 1px var(--lightmode-blue);
+.nav-item a {
+  color: var(--darkmode-latte);
+  /* text-shadow: 1px 1px black; */
   font-size: 25px;
   font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5vmax;
+  margin: 0 1vmax;
+}
+
+.nav-item a:hover {
+  color: var(--darkmode-coffee);
 }
 
 nav .btn {
@@ -65,22 +87,23 @@ nav .btn {
 }
 
 .btn {
-  background-color: var(--lightmode-yellow);
+  background-color: var(--darkmode-latte);
   border-radius: 5px;
   border: none;
-  color: black;
-  text-shadow: 1px 1px var(--lightmode-blue);
-  box-shadow: 0px 1px 3px var(--lightmode-green);
+  color: var(--darkmode-coffee);
+  text-shadow: 1px 1px black;
+  box-shadow: 0px 1px 3px var(--darkmode-ceramic);
 }
 
 .btn:hover {
-  background-color: var(--lightmode-blue);
+  background-color: var(--darkmode-coffee);
 }
 
+/******************************** HOME *********************************/
 
-
-/********************************About*********************************/
+/******************************** ABOUT *********************************/
 .about-section p {
+  color: var(--darkmode-latte);
   font-family: Roboto;
   font-weight: 700;
   margin: 30px;
@@ -89,23 +112,23 @@ nav .btn {
 
 .img-container {
   border: 2px solid var(--lightmode-yellow);
-}
-.MainScreenImg {
-  width: 80vw;
+  width: fit-content;
   height: 80vh;
-  object-fit: fill;
+  margin: 30px auto;
 }
 
-/********************************Login*********************************/
+
+/******************************** LOGIN *********************************/
 .login-container {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   min-height: 100%;
   margin-top: 5px;
+  margin-bottom: 250px;
 }
 .screen {
-  background-color: black;
+  background-color: #1e1e1e;
   position: relative;
   height: 600px;
   width: 360px;
@@ -147,7 +170,7 @@ nav .btn {
 .screen__background__shape2 {
   height: 220px;
   width: 220px;
-  background: var(--lightmode-blue);
+  background: var(--darkmode-latte);
   top: -172px;
   right: 0;
   border-radius: 32px;
@@ -158,8 +181,8 @@ nav .btn {
   width: 190px;
   background: linear-gradient(
     270deg,
-    var(--lightmode-green),
-    var(--lightmode-yellow)
+    var(--darkmode-latte),
+    var(--darkmode-coffee)
   );
   top: -24px;
   right: 0;
@@ -169,10 +192,11 @@ nav .btn {
 .screen__background__shape4 {
   height: 400px;
   width: 200px;
-  background: var(--lightmode-blue);
+  background: var(--darkmode-latte);
   top: 420px;
   right: 50px;
   border-radius: 60px;
+  overflow: hidden;
 }
 
 .login {
@@ -189,7 +213,7 @@ nav .btn {
 .login__icon {
   position: absolute;
   top: 30px;
-  color: var(--lightmode-pink);
+  color: var(--darkmode-coffee);
 }
 
 .login__input {
@@ -207,7 +231,7 @@ nav .btn {
 .login__input:focus,
 .login__input:hover {
   outline: none;
-  border-bottom-color: var(--lightmode-pink);
+  border-bottom-color: var(--darkmode-slate);
 }
 
 .login__submit {
@@ -222,8 +246,8 @@ nav .btn {
   display: flex;
   align-items: center;
   width: 100%;
-  color: var(--lightmode-green);
-  box-shadow: 0px 2px 2px var(--lightmode-pink);
+  color: var(--darkmode-coffee);
+  box-shadow: 0px 2px 2px var(--darkmode-latte);
   cursor: pointer;
   transition: 0.2s;
 }
@@ -231,14 +255,24 @@ nav .btn {
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
-  border-color: var(--lightmode-green);
+  border-color: var(--darkmode-ceramic);
   outline: none;
 }
 
 .button__icon {
   font-size: 24px;
   margin-left: auto;
-  color: var(--lightmode-green);
+  color: var(--darkmode-coffee);
+}
+
+.note-container {
+  color: var(--darkmode-coffee);
+  font-weight: bold;
+}
+
+.note-list-container {
+  color: var(--darkmode-coffee);
+  font-weight: bolder;
 }
 
 @media screen and (max-width: 800px) {

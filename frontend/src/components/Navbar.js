@@ -26,8 +26,11 @@ export const Navbar = () => {
         {/* <li className="nav-item">
           <Link className={`nav-link ${location.pathname === "/"?"active":""}`} aria-current="page" to="/">Home</Link>
         </li> */}
-        <li className="nav-item">
-          <Link className={`nav-link ${location.pathname === "/about"?"active":""}`} to="/about">About</Link>
+            <li className='nav-item'>
+              <Link className="home" to="/">Home</Link>
+            </li>
+            <li className="nav-item">
+          <Link className="about" to="/about">About</Link>
         </li>
        
       </ul>

@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import noteContext from '../context/notes/noteContext'
-import MainScreen from '../images/MainScreen.png'
+import MainScreen from '../images/MainScreen.png';
+import EditScreen from '../images/EditScreen.png';
 
 export const About = () => {
   const a = useContext(noteContext);
@@ -15,8 +16,9 @@ export const About = () => {
         Give Title to your note and add description and you can also add a tag to give your note a category.
       </p>
         </div>
-        <div className='img-container'>
-          <img className='MainScreenImg' src={MainScreen}/>
+        <div>
+          <img className='img-container MainScreenImg' src={MainScreen} />
+          <img className='img-container EditScreenImg' src={EditScreen} />
         </div>
       
       </div>

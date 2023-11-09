@@ -23,9 +23,9 @@ export const AddNote = () => {
           showAlert("Note Added Successfully!", "success")
     }
     return (
-        <div className='container my-5'>
+        <div className='note-container my-5'>
             <h2>Add a Note</h2>
-            <form className='comtainer my-3'>
+            <form className='note-sub-container my-3'>
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">Title</label>
                     <input type="text" className="form-control" id="title" name="title" value={note.title} onChange={onChange} />

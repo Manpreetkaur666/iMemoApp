@@ -45,7 +45,7 @@ export const Notes = () => {
         showAlert("Edit Successfully!", "Success:");
     }
   return (
-    <>
+    <div>
       <AddNote />
       <button type="button" className="btn btn-primary d-none" data-bs-toggle="modal" ref={ref} data-bs-target="#exampleModal">
         Launch demo modal
@@ -81,11 +81,11 @@ export const Notes = () => {
           </div>
         </div>
       </div> 
-      <div className='row my-3'>
+      <div className='note-list-container row my-3'>
         <h2>Your's Notes</h2>
         <div className='container mx-3'>{notes.length === 0 && "No notes to display!"}</div>
        {notes.map((note) => {return <Noteitem key={note._id} updateNote={updateNote} note={note} /> })}
       </div>
-    </>
+    </div>
   )
 }
